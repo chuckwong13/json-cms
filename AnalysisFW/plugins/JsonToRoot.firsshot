@@ -1,0 +1,38 @@
+from ROOT import TFile, TTree, TH1F
+from array import array
+import json
+from pprint import pprint
+
+with open('prueba.json') as data_file:    
+    data = json.load(data_file)
+    
+    f = TFile( 'JsonToRoot.root', 'recreate' )
+    t = TTree( 't1', 'tree with variables' )
+    
+    event=0
+    nel=0
+    met=0
+    electrons=0
+    
+    t.Branch( 'event', event, 'event/I' )
+    t.Branch( 'nel', nel, 'nel/I' )
+    t.Branch( 'met', met, 'met/F')
+    t.Branch( 'electrons',electrons,'electrons[nel]')
+    
+    
+    
+    for iterevent, eventvalue in data["Event"].iteritems():
+        event=int(iterevent)
+        print iterevent
+        for key, value in data["Event"][iterevent].iteritems():
+            
+            if key=="run":
+                run=value;
+            if key=="met":
+                met=value
+                            
+        t.Fill()        
+        
+     
+    f.Write()
+    f.Close()

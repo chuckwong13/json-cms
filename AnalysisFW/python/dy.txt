@@ -1,0 +1,7 @@
+TrigReport ---------- Module Summary ------------
+TrigReport    Visited        Run     Passed     Failed      Error Name
+TrigReport     100000     100000     100000          0          0 goodOfflinePrimaryVertices
+TrigReport     100000     100000      99955         45          0 trackingFailureFilter
+TrigReport      99955      99955      99955          0          0 ak5ak7
+TrigReport     100000     100000     100000          0          0 TriggerResults
+
