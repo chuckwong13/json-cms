@@ -97,8 +97,8 @@ OpenDataTreeProducerOptimized::OpenDataTreeProducerOptimized(edm::ParameterSet c
 
 void OpenDataTreeProducerOptimized::beginJob() {
 	mTree = fs->make< TTree >("OpenDataTree", "OpenDataTree");
-	file_id.open("/eos/cms/store/user/lara/"+jsonname,std::ios_base::app | std::ios_base::out);
- cout << "File name " << "/afs/cern.ch/user/l/lara/work/eos/cms/store/user/lara/"+jsonname << endl;
+	file_id.open("/home/cms-opendata/WorkingArea/CMSSW_5_3_32/src/json-cms/AnalysisFW/python/outputjsons/"+jsonname,std::ios_base::app | std::ios_base::out);
+ cout << "File name " << "/home/cms-opendata/WorkingArea/CMSSW_5_3_32/src/json-cms/AnalysisFW/python/outputjsons/"+jsonname << endl;
 
 	// Variables of the flat tuple
 	mTree->Branch("njet", &njet, "njet/i");

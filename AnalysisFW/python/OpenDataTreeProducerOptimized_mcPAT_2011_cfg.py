@@ -14,10 +14,10 @@ process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 # True : when running in OpenData virtual machine
 # False: when runing in lxplus 
-runOnVM = False
+runOnVM = True
 
 # Local input
-fileList = FileUtils.loadListFromFile('TTJets/CMS_MonteCarlo2011_Summer11LegDR_TTJets_TuneZ2_7TeV-madgraph-tauola_AODSIM_PU_S13_START53_LV6-v1_010002_file_index.txt')
+fileList = FileUtils.loadListFromFile('CMS_MonteCarlo2011_Summer11LegDR_TTJets_TuneZ2_7TeV-madgraph-tauola_AODSIM_PU_S13_START53_LV6-v1_010002_file_index.txt') # change the name of 4 index files
 process.source.fileNames = cms.untracked.vstring(*fileList)
 
 if runOnVM:
