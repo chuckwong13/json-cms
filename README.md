@@ -31,10 +31,10 @@ With `json-collisions/AnalysisFW/python/` as the current folder, run the followi
 1. Download index files : 
     
     ```
-    wget http://opendata.cern.ch/record/1394/files/CMS_MonteCarlo2011_Summer11LegDR_DYJetsToLL_M-50_7TeV-madgraph-pythia6-tauola_AODSIM_PU_S13_START53_LV6-v1_00002_file_index.txt
-    wget http://opendata.cern.ch/record/1544/files/CMS_MonteCarlo2011_Summer11LegDR_TTJets_TuneZ2_7TeV-madgraph-tauola_AODSIM_PU_S13_START53_LV6-v1_010001_file_index.txt
-    wget http://opendata.cern.ch/record/1633/files/CMS_MonteCarlo2011_Summer11LegDR_WJetsToLNu_TuneZ2_7TeV-madgraph-tauola_AODSIM_PU_S13_START53_LV6-v1_00002_file_index.txt
-    wget http://opendata.cern.ch/record/1343/files/CMS_MonteCarlo2011_Summer11LegDR_ZZJetsTo4L_TuneZ2_7TeV-madgraph-tauola_AODSIM_PU_S13_START53_LV6-v1_020000_file_index.txt
+    wget  -P Index_files/ http://opendata.cern.ch/record/1394/files/CMS_MonteCarlo2011_Summer11LegDR_DYJetsToLL_M-50_7TeV-madgraph-pythia6-tauola_AODSIM_PU_S13_START53_LV6-v1_00002_file_index.txt
+    wget  -P Index_files/ http://opendata.cern.ch/record/1544/files/CMS_MonteCarlo2011_Summer11LegDR_TTJets_TuneZ2_7TeV-madgraph-tauola_AODSIM_PU_S13_START53_LV6-v1_010001_file_index.txt
+    wget  -P Index_files/ http://opendata.cern.ch/record/1633/files/CMS_MonteCarlo2011_Summer11LegDR_WJetsToLNu_TuneZ2_7TeV-madgraph-tauola_AODSIM_PU_S13_START53_LV6-v1_00002_file_index.txt
+    wget  -P Index_files/ http://opendata.cern.ch/record/1343/files/CMS_MonteCarlo2011_Summer11LegDR_ZZJetsTo4L_TuneZ2_7TeV-madgraph-tauola_AODSIM_PU_S13_START53_LV6-v1_020000_file_index.txt
     ```
     
     
@@ -55,7 +55,7 @@ With `json-collisions/AnalysisFW/python/` as the current folder, run the followi
 This command creates roots file and json files we need from Monte Carlo simulations:
 
 ```
-    cmsRun OpenDataTreeProducerOptimized_mcPAT_2011_cfg.py
+    python runthisone.py 
 ```
  
 After running this command, we can gain 4 different json files corresponding to 4 different index files we've downloaded above.
