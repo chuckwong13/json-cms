@@ -1,5 +1,8 @@
+#this file is to load idex files from '/Index_files' and generate different 
+#names of .json according to projectiles that index files represent automatically
+#then run OpenDataTreeProducerOptimized_mcPAT_2011_cfg.py
+
 import os
-#os.system('cmsRun /home/cms-opendata/WorkingArea/CMSSW_5_3_32/src/json-cms/AnalysisFW/python/OpenDataTreeProducerOptimized_mcPAT_2011_cfg.py')
 
 cwd = os.getcwd()
 index_path = cwd + '/Index_files'
