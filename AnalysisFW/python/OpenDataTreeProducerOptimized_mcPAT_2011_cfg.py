@@ -8,20 +8,24 @@
 ## Skeleton process
 from PhysicsTools.PatAlgos.patTemplate_cfg import *
 import FWCore.Utilities.FileUtils as FileUtils
+import sys
+
+INPUTINDEX = sys.argv[2]
+OUTPUTJSON = sys.argv[3]
+
 
 process.load('Configuration.StandardSequences.Services_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 # True : when running in OpenData virtual machine
-# False: when runing in lxplus 
 runOnVM = True
 
 # Local input
-fileList = FileUtils.loadListFromFile('CMS_MonteCarlo2011_Summer11LegDR_TTJets_TuneZ2_7TeV-madgraph-tauola_AODSIM_PU_S13_START53_LV6-v1_010002_file_index.txt') # change the name of 4 index files
+#fileList = FileUtils.loadListFromFile(INPUTINDEX) 
+fileList = FileUtils.loadListFromFile(INPUTINDEX)
 process.source.fileNames = cms.untracked.vstring(*fileList)
 
-if runOnVM:
-    process.GlobalTag.connect = cms.string('sqlite_file:/cvmfs/cms-opendata-conddb.cern.ch/START53_LV6A1.db')
+process.GlobalTag.connect = cms.string('sqlite_file:/cvmfs/cms-opendata-conddb.cern.ch/START53_LV6A1.db')
 # Global tag for Summer11LegDR-PU_S13_START53_LV6-v1
 process.GlobalTag.globaltag = cms.string('START53_LV6A1::All')
 
@@ -45,7 +49,7 @@ process.load("JetMETCorrections.Configuration.JetCorrectionServicesAllAlgos_cff"
 
 process.ak5ak7 = cms.EDAnalyzer('OpenDataTreeProducerOptimized',
     ## jet collections ###########################
-    jsoninput = cms.string('json_ttbar_lite.json'),
+    jsoninput = cms.string(OUTPUTJSON),
     pfak7jets       = cms.InputTag('ak7PFJets'),
     pfak5jets       = cms.InputTag('ak5PFJets'),
     ## MET collection ####
