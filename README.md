@@ -19,14 +19,14 @@ cd ./WorkingArea
 cmsrel CMSSW_5_3_32
 cd ./CMSSW_5_3_32/src
 cmsenv
-git clone https://github.com/chuckwong13/json-collisions
-cd ./json-collisions
+git clone https://github.com/chuckwong13/json-cms
+cd ./json-cms
 scram b
 ```
 
 ## Setting up additional files
 
-With `json-collisions/AnalysisFW/python/` as the current folder, run the following commands:
+With `json-cms/AnalysisFW/python/` as the current folder, run the following commands:
 
 1. Download index files : 
     
@@ -36,7 +36,7 @@ With `json-collisions/AnalysisFW/python/` as the current folder, run the followi
     wget  -P Index_files/ http://opendata.cern.ch/record/1633/files/CMS_MonteCarlo2011_Summer11LegDR_WJetsToLNu_TuneZ2_7TeV-madgraph-tauola_AODSIM_PU_S13_START53_LV6-v1_00002_file_index.txt
     wget  -P Index_files/ http://opendata.cern.ch/record/1343/files/CMS_MonteCarlo2011_Summer11LegDR_ZZJetsTo4L_TuneZ2_7TeV-madgraph-tauola_AODSIM_PU_S13_START53_LV6-v1_020000_file_index.txt
     ```
-    now we have 4 index files
+    now we have 4 index files(if they're existing, you don't need to download them again)
     
 2. Create links to the condition databases:
     ```
